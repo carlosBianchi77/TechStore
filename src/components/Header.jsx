@@ -12,10 +12,10 @@ export const Header = () => {
     return (
     <header className='header'>
         <h1 className='logo'>TechStore</h1>
-        <nav className='nav'>
+        <nav className='nav' aria-label='Navegación principal'>
             <Link to={"/"}>Inicio</Link>
             <Link to={"/productos"}>Productos</Link>
-            <Link to={"/carrito"} className='link-carrito'><ShoppingCartIcon />{totalItems > 0 && (<span className='contador-carrito'>{totalItems}</span>)}</Link>
+            <Link to={"/carrito"} className='link-carrito' aria-label={`Carrito de compras, ${totalItems} productos`}><ShoppingCartIcon />{totalItems > 0 && (<span className='contador-carrito'>{totalItems}</span>)}</Link>
             <Link to={"/contacto"}>Contacto</Link>
         </nav>
     </header>
