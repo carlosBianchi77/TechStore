@@ -1,0 +1,221 @@
+.home {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 24px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eaf1ff 100%);
+}
+
+.home-hero {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+    padding: 60px 35px;
+    background-color: #ffffff;
+    border: 1px solid #e5eaf2;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.home-etiqueta {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 14px;
+    border-radius: 50px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.home-hero h1 {
+    margin-bottom: 22px;
+    color: #172033;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.home-hero h1 span {
+    color: #2563eb;
+}
+
+.home-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.home-acciones {
+    margin-top: 32px;
+}
+
+.home-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.home-boton:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+.home-boton span {
+    font-size: 21px;
+    transition: transform 0.2s ease;
+}
+
+.home-boton:hover span {
+    transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+    .home {
+        min-height: calc(100vh - 70px);
+        padding: 30px 16px;
+    }
+
+    .home-hero {
+        padding: 42px 22px;
+        border-radius: 18px;
+    }
+
+    .home-hero p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .home-boton {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Sección de productos destacados */
+.productos-destacados {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.productos-destacados h2 {
+    margin: 0 0 35px;
+    color: #172033;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 800;
+}
+
+/* Cuadrícula de productos */
+.productos-destacados .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0 0 35px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Tarjetas */
+.productos-destacados .producto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px;
+    background-color: #ffffff;
+    border: 1px solid #e5eaf2;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productos-destacados .producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* Imagen */
+.productos-destacados .producto-imagen-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.productos-destacados .producto-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Nombre y precio */
+.productos-destacados .producto-nombre {
+    margin: 0 0 14px;
+    color: #172033;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.productos-destacados .producto-precio {
+    margin-top: auto;
+    margin-bottom: 0;
+    color: #2563eb;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+/* Botón para ver el catálogo */
+.productos-destacados > .home-boton {
+    margin-top: 10px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .productos-destacados .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 500px) {
+    .productos-destacados {
+        padding: 40px 16px;
+    }
+
+    .productos-destacados .productos-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .productos-destacados .producto-card {
+        padding: 24px;
+    }
+
+    .productos-destacados .producto-imagen-contenedor {
+        height: 200px;
+    }
+}

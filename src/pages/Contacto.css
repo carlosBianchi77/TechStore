@@ -1,0 +1,104 @@
+
+/* Página de contacto */
+.contacto {
+    width: min(100% - 32px, 700px);
+    margin: 48px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contacto h1 {
+    margin-bottom: 12px;
+    color: #1f2937;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contacto > p {
+    margin-bottom: 28px;
+    color: #6b7280;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contacto .form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contacto .form-grupo label {
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.contacto .form-grupo input,
+.contacto .form-grupo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #111827;
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contacto .form-grupo input:focus,
+.contacto .form-grupo textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.contacto .form-grupo textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contacto form button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.contacto form button:hover {
+    background-color: #1d4ed8;
+}
+
+.contacto form button:active {
+    transform: scale(0.98);
+}
+
+.mensaje-exito {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 480px) {
+    .contacto {
+        margin: 24px auto;
+        padding: 22px 18px;
+    }
+
+    .contacto h1 {
+        font-size: 1.7rem;
+    }
+}
