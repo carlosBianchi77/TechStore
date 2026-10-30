@@ -788,3 +788,34 @@
         font-size: 27px;
     }
 }
+
+/* Responsive para celulares pequeños */
+@media (max-width: 400px) {
+
+    .carrito-grid {
+        grid-template-columns: 1fr;
+        padding: 8px 20px 24px;
+    }
+
+    .carrito-grid .producto-card {
+        padding: 16px;
+    }
+
+    .carrito-grid .producto-imagen-contenedor {
+        height: 170px;
+    }
+
+    .carrito-cantidad {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .carrito-cantidad-controles button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .carrito-resumen {
+        margin: 16px 20px;
+    }
+}
