@@ -9,10 +9,21 @@ export const Productos = () => {
     const [error, setError] = useState(null);
     const [busqueda, setBusqueda] = useState("");
     const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+    const [productoAgregado, setProductoAgregado] = useState(null);
 
     const agregarProducto = useCarritoStore(
         (state) => state.agregarProducto
     );
+
+    const mostrarMensajeExito = (productoId) => {
+        setProductoAgregado(productoId);
+
+        setTimeout(() => {
+            setProductoAgregado((actual) =>
+                actual === productoId ? null : actual
+            );
+        }, 2500);
+    };
 
     useEffect(() => {
         const obtenerProductos = async () => {
@@ -104,7 +115,10 @@ export const Productos = () => {
                             <button
                                 type="button"
                                 className="producto-boton"
-                                onClick={() => agregarProducto(producto)}
+                                onClick={() => {
+                                    agregarProducto(producto);
+                                    mostrarMensajeExito(producto.id);
+                                }}
                             >
                                 Agregar al carrito
                             </button>
@@ -119,6 +133,15 @@ export const Productos = () => {
                                 Ver detalles
                             </button>
                         </div>
+
+                        {productoAgregado === producto.id && (
+                            <div
+                                className="mensaje-exito"
+                                role="status"
+                            >
+                                ✓ Producto agregado con éxito
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>
@@ -175,7 +198,10 @@ export const Productos = () => {
                                 type="button"
                                 className="producto-boton modal-detalles-agregar"
                                 onClick={() => {
+                                    const productoId = productoSeleccionado.id;
+
                                     agregarProducto(productoSeleccionado);
+                                    mostrarMensajeExito(productoId);
                                     setProductoSeleccionado(null);
                                 }}
                             >
@@ -201,4 +227,3 @@ export const Productos = () => {
         </main>
     );
 };
-
